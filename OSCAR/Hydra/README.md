@@ -8,4 +8,4 @@
 - [OSCAR](https://www.oscar-system.org/) 1.0.2.
 
 ## Usage
-For usage examples please see [Hydra.ipynb](./Hydra.ipynb).
+For usage examples see [Hydra.ipynb](./Hydra.ipynb).

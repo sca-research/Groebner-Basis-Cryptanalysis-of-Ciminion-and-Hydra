@@ -9,4 +9,4 @@
 - [SageMath](https://www.sagemath.org/) 10.3.
 
 ## Usage
-For usage examples please see [Hydra.ipynb](./Hydra.ipynb).
+For usage examples see [Hydra.ipynb](./Hydra.ipynb).

@@ -11,4 +11,4 @@
 - [SageMath](https://www.sagemath.org/) 10.3.
 
 ## Usage
-For usage examples please see [Ciminion.ipynb](./Ciminion.ipynb) and [Ciminion_2.ipynb](./Ciminion_2.ipynb).
+For usage examples see [Ciminion.ipynb](./Ciminion.ipynb) and [Ciminion_2.ipynb](./Ciminion_2.ipynb).
