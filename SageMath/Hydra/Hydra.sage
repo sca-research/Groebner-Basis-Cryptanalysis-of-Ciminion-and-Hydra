@@ -164,7 +164,7 @@ class Hydra:
         for i in range(0, 4):
             s1 += (-1)**i * v_in[i]
             s2 += (-1)**floor(i / 2) * v_in[i]
-        s = (s1**2 + s2**2)**2
+        s = (s1**2 + s2)**2
 
         for i in range(0, 4):
             v_out[i] += v_in[i] + s

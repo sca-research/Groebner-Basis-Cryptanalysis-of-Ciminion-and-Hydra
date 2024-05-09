@@ -190,7 +190,7 @@ function body_round_function_internal(v_in::FqMatrix,
         s1 += (-1)^(i - 1) * v_in[i, 1]
         s2 += (-1)^(Int64(floor((i - 1) / 2))) * v_in[i, 1]
     end
-    s = (s1^2 + s2^2)^2
+    s = (s1^2 + s2)^2
     
     for i in 1:4
         v_out[i, 1] += s
