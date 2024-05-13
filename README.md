@@ -1,5 +1,5 @@
 # Gröbner Basis Cryptanalysis Ciminion and Hydra
-This repository contains implementations of polynomials models for [Ciminion](https://doi.org/10.1007/978-3-030-77886-6_1) and [Hydra](https://doi.org/10.1007/978-3-031-30634-1_9) analyzed in [this paper](dummy).
+This repository contains implementations of polynomials models for [Ciminion](https://doi.org/10.1007/978-3-030-77886-6_1) and [Hydra](https://doi.org/10.1007/978-3-031-30634-1_9) analyzed in [https://arxiv.org/abs/2405.05040](https://arxiv.org/abs/2405.05040).
 
 - For [Ciminion](https://doi.org/10.1007/978-3-030-77886-6_1):
     - The [SageMath](https://www.sagemath.org/) implementation contains a function that computes a DRL Gröbner basis for arbitrary number of rounds.
