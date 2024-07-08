@@ -200,7 +200,7 @@ class Hydra:
             z += y
         
         for i in range(0, self.rounds_body_I):
-            y = self.body_round_function_internal(y, self.matrix_body_I, self.constants_body[self.rounds_body_E_1 + i ])
+            y = self.body_round_function_internal(y, self.matrix_body_I, self.constants_body[self.rounds_body_E_1 + i])
             z += y
 
         for i in range(0, self.rounds_body_E_2 - 1):

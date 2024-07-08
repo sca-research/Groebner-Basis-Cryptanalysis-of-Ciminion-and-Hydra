@@ -5,7 +5,7 @@
 - [Hydra_step_degrees_with_Gröbner_basis.ipynb](./Hydra_step_degrees_with_Gröbner_basis.ipynb), a notebook that first extracts a zero-dimensional DRL Gröbner basis from the Hydra polynomial via an affine change of coordinates, and then computes the step degrees in F4 for low numbers of rounds.
 
 ## Requirements
-- [OSCAR](https://www.oscar-system.org/) 1.0.2.
+- [OSCAR](https://www.oscar-system.org/) 1.1.1.
 
 ## Usage
 For usage examples see [Hydra.ipynb](./Hydra.ipynb).

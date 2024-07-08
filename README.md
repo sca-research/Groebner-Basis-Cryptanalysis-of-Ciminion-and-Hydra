@@ -10,4 +10,4 @@ This repository contains implementations of polynomials models for [Ciminion](ht
 
 ## Requirements
 - [SageMath](https://www.sagemath.org/) 10.3.
-- [OSCAR](https://www.oscar-system.org/) 1.0.2.
+- [OSCAR](https://www.oscar-system.org/) 1.1.1.
