@@ -39,7 +39,8 @@ def generate_Hydra_polynomials_m_samples(hydra=Hydra(),
                                          nonce=None,
                                          samples=None,
                                          termorder="degrevlex",
-                                         field_equations=False):
+                                         field_equations=False,
+                                         info_level=0):
     """
     Generates a polynomial model for m Hydra heads.
 
@@ -73,12 +74,13 @@ def generate_Hydra_polynomials_m_samples(hydra=Hydra(),
     else:
         m = int(len(samples) / 8)
     
-    print("Nonce:", nonce)
-    if print_key:
-        print("Key:", key)
-    print("Number of samples:", m)
-    print("Samples:", samples)
-    print("Term order:", termorder)
+    if info_level > 0:
+        print("Nonce:", nonce)
+        if print_key:
+            print("Key:", key)
+        print("Number of samples:", m)
+        print("Samples:", samples)
+        print("Term order:", termorder)
     
     variables = generate_Hydra_variables_m_samples(hydra.rounds_head, m)
     P = PolynomialRing(hydra.field, variables, order=termorder)

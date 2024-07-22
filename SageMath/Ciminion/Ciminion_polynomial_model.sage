@@ -33,7 +33,8 @@ def generate_Ciminion_polynomials(ciminion=Ciminion(),
                                   cipher=None,
                                   nonce=None,
                                   termorder="degrevlex",
-                                  field_equations=False):
+                                  field_equations=False,
+                                  info_level=0):
     """
     Generates a polynomial model for the first key pair of Ciminion.
 
@@ -67,12 +68,13 @@ def generate_Ciminion_polynomials(ciminion=Ciminion(),
                ciminion.field.random_element()]
         cipher = ciminion.encrypt(plain, key, nonce)
     
-    print("Plaintext:", plain)
-    if print_key:
-        print("Key:", key)
-    print("Nonce:", nonce)
-    print("Ciphertext:", cipher)
-    print("Term order:", termorder)
+    if info_level > 0:
+        print("Plaintext:", plain)
+        if print_key:
+            print("Key:", key)
+        print("Nonce:", nonce)
+        print("Ciphertext:", cipher)
+        print("Term order:", termorder)
 
     variables = generate_Ciminion_variables(ciminion.rounds_C, ciminion.rounds_E)
     P = PolynomialRing(ciminion.field, variables, order=termorder)
