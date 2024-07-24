@@ -34,7 +34,7 @@ def generate_Ciminion_polynomials(ciminion=Ciminion(),
                                   nonce=None,
                                   termorder="degrevlex",
                                   field_equations=False,
-                                  info_level=0):
+                                  info_level=1):
     """
     Generates a polynomial model for the first key pair of Ciminion.
 
