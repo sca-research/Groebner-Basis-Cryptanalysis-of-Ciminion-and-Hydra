@@ -134,9 +134,9 @@ class Ciminion_2:
         key_stream[1] = self.field(key[0])
         key_stream[2] = self.field(key[1])
 
-        for i in range(0, self.rounds_C - 1):
-            key_stream = self.round_function(key_stream, self.constants_C[i])
-        key_stream = self.round_function(key_stream, self.constants_C[self.rounds_C - 1], key=key)
+        key_stream = self.round_function(key_stream, self.constants_C[0])
+        for i in range(1, self.rounds_C):
+            key_stream = self.round_function(key_stream, self.constants_C[i], key=key)
 
         for i in range(0, self.rounds_E):
             key_stream = self.round_function(key_stream, self.constants_E[i], key=key)

@@ -100,7 +100,8 @@ def generate_Ciminion_2_polynomials(ciminion_2=Ciminion_2(),
         current_state = next_state
         next_state = vector(P, variables_C[3 * i:3 * (i + 1)])
         polys = ciminion_2.round_function(current_state, 
-                                          ciminion_2.constants_C[i]) - next_state
+                                          ciminion_2.constants_C[i],
+                                          key=key_variables) - next_state
         polynomials = polynomials + list(polys)
     current_state = next_state
     next_state = vector(P, variables_E[0:3])
