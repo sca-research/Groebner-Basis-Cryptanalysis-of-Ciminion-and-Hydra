@@ -6,7 +6,7 @@
 - [Hydra_substituted_downsized_polynomial_system.ipynb](./Hydra_substituted_downsized_polynomial_system.ipynb) extracts a zero-dimensional DRL Gröbner basis from the Hydra polynomial system via an affine change of coordinates.
 
 ## Requirements
-- [SageMath](https://www.sagemath.org/) 10.3.
+- [SageMath](https://www.sagemath.org/) 10.4.
 
 ## Usage
 For usage examples see [Hydra.ipynb](./Hydra.ipynb).

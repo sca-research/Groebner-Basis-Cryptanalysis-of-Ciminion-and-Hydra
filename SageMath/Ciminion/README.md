@@ -8,7 +8,7 @@
 - [Ciminion_2_Groebner_basis.ipynb](./Ciminion_2_Groebner_basis.ipynb) computes a DRL Gröbner basis for an arbitrary Ciminion_2 instance over an arbitrary field.
 
 ## Requirements
-- [SageMath](https://www.sagemath.org/) 10.3.
+- [SageMath](https://www.sagemath.org/) 10.4.
 
 ## Usage
 For usage examples see [Ciminion.ipynb](./Ciminion.ipynb) and [Ciminion_2.ipynb](./Ciminion_2.ipynb).
