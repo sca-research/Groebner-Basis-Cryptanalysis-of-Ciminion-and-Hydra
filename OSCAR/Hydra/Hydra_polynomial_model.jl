@@ -391,10 +391,10 @@ function non_linear_variable_substitution_Hydra_polynomial_system(hydra::Hydra,
                 break
             end
         end
-        println("Number of non-linear variables:", n_non_lin)
-        println("Number of polynomials in substituted downsized Hydra polynomial system:", length(polys_downsized_subs))
-        println("(x_subs_1^2, ..., x_subs_n^2) contained in leading terms of substituted polynomials:", zero_dimensional)
-        println("All terms of donwiszed polynomial system contained in (x_subs_1, ..., x_subs_n):", substitution_success)
+        println("Number of non-linear variables: ", n_non_lin)
+        println("Number of polynomials in substituted downsized Hydra polynomial system: ", length(polys_downsized_subs))
+        println("(x_subs_1^2, ..., x_subs_n^2) contained in leading terms of substituted polynomials: ", zero_dimensional)
+        println("All terms of donwiszed polynomial system contained in (x_subs_1, ..., x_subs_n): ", substitution_success)
     end
 
     return affine_polys, polys_subs, polys_downsized_subs
