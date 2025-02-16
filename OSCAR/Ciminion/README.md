@@ -8,7 +8,7 @@
 - [Ciminion_2.ipynb](./Ciminion_2.ipynb) computes a DRL Gröbner basis for an arbitrary Ciminion_2 instance with F4 for an efficient and an inefficient DRL Term order.
 
 ## Requirements
-- [OSCAR](https://www.oscar-system.org/) 1.2.0.
+- [OSCAR](https://www.oscar-system.org/) 1.2.2.
 
 ## Usage
 For usage examples see [Ciminion.ipynb](./Ciminion.ipynb) and [Ciminion_2.ipynb](./Ciminion_2.ipynb).
