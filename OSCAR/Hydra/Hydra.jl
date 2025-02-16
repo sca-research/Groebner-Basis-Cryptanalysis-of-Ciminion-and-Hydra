@@ -157,7 +157,7 @@ function body_round_function_external(v_in::FqMatrix,
     OUTPUT:
     4x1 matrix over field.
     """
-    v_out = v_in
+    v_out = deepcopy(v_in)
     for i in 1:4
         v_out[i, 1] = v_out[i, 1]^d
     end
@@ -181,7 +181,7 @@ function body_round_function_internal(v_in::FqMatrix,
     OUTPUT:
     4x1 matrix over field.
     """
-    v_out = v_in
+    v_out = deepcopy(v_in)
     K = base_ring(v_in)
     s1 = zero(K)
     s2 = zero(K)
@@ -221,7 +221,7 @@ function body(nonce::FqFieldElem,
     end
     v_in = hydra.matrix_body_E * (v_in + key)
 
-    y = v_in
+    y = deepcopy(v_in)
     z = zero_matrix(hydra.field, 4, 1)
     
     for i in 1:hydra.rounds_body_E_1
@@ -250,7 +250,7 @@ function body(nonce::FqFieldElem,
                                      hydra.d, 
                                      hydra.matrix_body_E, 
                                      matrix(hydra.constants_body[:, hydra.rounds_body_E_1 + hydra.rounds_body_I + hydra.rounds_body_E_2]))
-    y = y + key
+    y += key
 
     y_z = zero_matrix(hydra.field, 8, 1)
     for i in 1:4
@@ -317,11 +317,11 @@ function head_round_function(v_in::Union{FqMatrix, AbstractAlgebra.Generic.MatSp
     OUTPUT:
     8x1 matrix over field.
     """
-    v_out = zero_matrix(base_ring(v_in), 8, 1)
+    K = base_ring(v_in)
+    v_out = zero_matrix(K, 8, 1)
     for i in 1:8
         v_out[i, 1] += v_in[i, 1]
     end
-    K = base_ring(v_in)
     s = zero(K)
 
     for i in 1:8
@@ -357,15 +357,15 @@ function head(y_z::FqMatrix,
     large_key = zero_matrix(hydra.field, 8, 1)
     tmp = hydra.matrix_body_E * key
     for i in 1:4
-        large_key[i, 1] = key[i, 1]
-        large_key[i + 4, 1] = tmp[i, 1]
+        large_key[i, 1] += key[i, 1]
+        large_key[i + 4, 1] += tmp[i, 1]
     end
 
-    v_in = y_z
+    v_in = deepcopy(y_z)
     out = Vector{typeof(y_z[1, 1])}()
 
     for i in 1:m
-        v_out = v_in
+        v_out = deepcopy(v_in)
         for j in 1:hydra.rounds_head
             v_out = head_round_function(v_out, 
                                         large_key, 

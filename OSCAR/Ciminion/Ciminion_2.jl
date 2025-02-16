@@ -103,9 +103,9 @@ function round_function(v_in::Union{FqMatrix, AbstractAlgebra.Generic.MatSpaceEl
     mat = generate_matrix(constants[4, 1])
 
     # Toffoli gate
-    v_out[1, 1] = v_in[1, 1]
-    v_out[2, 1] = v_in[2, 1]
-    v_out[3, 1] = v_in[3, 1] + v_in[1, 1] * v_in[2, 1]
+    v_out[1, 1] += v_in[1, 1]
+    v_out[2, 1] += v_in[2, 1]
+    v_out[3, 1] += v_in[3, 1] + v_in[1, 1] * v_in[2, 1]
     if ! isnothing(key)
         v_out[3, 1] += key[1, 1] + key[2, 1]
     end
@@ -136,12 +136,12 @@ function generate_key_stream(key, nonce, ciminion_2::Ciminion_2)
     key_stream[2, 1] = key[1, 1]
     key_stream[3, 1] = key[2, 1]
 
-    for i in 1:ciminion_2.rounds_C - 1
-        key_stream = round_function(key_stream, matrix(ciminion_2.constants_C[:, i]))
+    key_stream = round_function(key_stream, matrix(ciminion_2.constants_C[:, 1]))
+    for i in 2:ciminion_2.rounds_C
+        key_stream = round_function(key_stream, 
+                                    matrix(ciminion_2.constants_C[:, i]),
+                                    key=key)
     end
-    key_stream = round_function(key_stream, 
-                                matrix(ciminion_2.constants_C[:, ciminion_2.rounds_C]), 
-                                key=key)
 
     for i in 1:ciminion_2.rounds_E
         key_stream = round_function(key_stream, 
