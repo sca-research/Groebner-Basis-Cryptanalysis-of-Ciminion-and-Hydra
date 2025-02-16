@@ -9,5 +9,5 @@ This repository contains implementations of polynomials models for [Ciminion](ht
     - With both implementations one can extract a zero-dimensional DRL Gröbner basis after a linear change of coordinates.
 
 ## Requirements
-- [SageMath](https://www.sagemath.org/) 10.4.
-- [OSCAR](https://www.oscar-system.org/) 1.2.0.
+- [SageMath](https://www.sagemath.org/) 10.5.
+- [OSCAR](https://www.oscar-system.org/) 1.2.2.

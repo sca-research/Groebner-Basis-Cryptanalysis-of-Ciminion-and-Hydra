@@ -8,7 +8,7 @@
 - [Hydra_fglm.jl](./Hydra_fglm.jl) is a script to record the running time of FGLM for low round numbers.
 
 ## Requirements
-- [OSCAR](https://www.oscar-system.org/) 1.2.0.
+- [OSCAR](https://www.oscar-system.org/) 1.2.2.
 
 ## Usage
 For usage examples see [Hydra.ipynb](./Hydra.ipynb).
