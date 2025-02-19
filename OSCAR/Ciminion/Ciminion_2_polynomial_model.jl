@@ -113,7 +113,8 @@ function generate_Ciminion_2_polynomials(;ciminion_2::Ciminion_2=Ciminion_2_cons
         current_state = next_state
         next_state = matrix(variables_C[3 * (i - 1) + 1: 3 * i])
         polys = round_function(current_state, 
-                               matrix(ciminion_2.constants_C[:, i])) - next_state
+                               matrix(ciminion_2.constants_C[:, i]),
+                               key=key_variables) - next_state
         polynomials = [polynomials; vec(polys[:, 1])]
     end
     current_state = next_state
