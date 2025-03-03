@@ -38,7 +38,8 @@ function generate_Ciminion_2_polynomials(;ciminion_2::Ciminion_2=Ciminion_2_cons
                                         cipher=nothing,
                                         nonce=nothing,
                                         termorder="degrevlex",
-                                        field_equations=false)
+                                        field_equations=false,
+                                        info_level=0)
     """
     Generates a polynomial model for the first key pair of Ciminion_2.
 
@@ -55,6 +56,8 @@ function generate_Ciminion_2_polynomials(;ciminion_2::Ciminion_2=Ciminion_2_cons
     "field_equations" -- Boolean value, if set to true field equations
                          are added to the Ciminion_2 polynomials.
                          Default value "false".
+    "info_level" -- Integer, if greater than zero, then parameters are
+                    printed in console.
     
     OUTPUT:
     Ciminion_2 polynomial system.
@@ -76,13 +79,15 @@ function generate_Ciminion_2_polynomials(;ciminion_2::Ciminion_2=Ciminion_2_cons
         cipher = encrypt(plain, key, nonce, ciminion_2)
     end
 
-    println("Plaintext: ", plain)
-    if print_key
-        println("Key: ", key)
+    if info_level > 1
+        println("Plaintext: ", plain)
+        if print_key
+            println("Key: ", key)
+        end
+        println("Ciphertext: ", cipher)
+        println("Nonce: ", nonce)
+        println("Term order: ", termorder)
     end
-    println("Ciphertext: ", cipher)
-    println("Nonce: ", nonce)
-    println("Term order: ", termorder)
 
     variables = generate_Ciminion_2_variables(ciminion_2.rounds_C, ciminion_2.rounds_E)
     if termorder == "degrevlex"
