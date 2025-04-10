@@ -284,8 +284,8 @@ function number_of_non_linear_variables_Hydra_polynomial_system(hydra,
         polys_transformed = transform_Hydra_polynomial_system(hydra, hydra_polys, m)
     else
         polys_transformed = hydra_polys
-        affine_polys = filter(poly -> total_degree(poly) == 1, polys_transformed)
     end
+    affine_polys = filter(poly -> total_degree(poly) == 1, polys_transformed)
     gb = groebner_basis_f4(ideal(affine_polys))
     return n_vars - length(gb)
 end
@@ -331,7 +331,7 @@ function non_linear_variable_substitution_Hydra_polynomial_system(hydra::Hydra,
                                                                        transformed=transformed)
     variables_subs = generate_Hydra_variables_m_samples(hydra.rounds_head, m)
     variables_subs = [variables_subs; map(i -> "x_subs_i" * string(i), 1:n_non_lin)]
-    Q_subs, variables_subs = polynomial_ring(base_ring(P), variables_subs)
+    Q_subs, variables_subs = polynomial_ring(base_ring(P), variables_subs, internal_ordering=:degrevlex)
     induce(variables_subs, degrevlex(variables_subs))
     phi = hom(P, Q_subs, variables_subs[1:n_vars])
     variables_subs = variables_subs[n_vars + 1:length(variables_subs)]
